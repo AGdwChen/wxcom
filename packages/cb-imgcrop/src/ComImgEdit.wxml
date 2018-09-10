@@ -1,0 +1,31 @@
+<!--component/picPro/picPro.wxml-->
+<scroll-view class='body'>
+  <view class='flex-column flex-between full-height full-width' bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+    <view class='bg_dark out_item'></view>
+    <view class='flex-row main flex-between' style='height:{{(windowWidth - margin.left - margin.right)/ratio + "px"}}'>
+      <view class='bg_dark main_item full-height' style='width:{{margin.left  + "px"}}'></view>
+
+      <view class='inner relative full-width' id='showArea'>
+        <image class='absolute img' src='{{src}}' style="width:{{img.width}}px;height:{{img.height}}px;left:{{img.left}}px;top:{{img.top}}px;"></image>
+       <canvas canvas-id='imgCanvas' class='absolute img_canvas full-height full-width' />
+        <view class='absolute inner_item left_top'></view>
+        <view class='absolute inner_item right_top'></view>
+        <view class='absolute inner_item right_bottom'></view>
+        <view class='absolute inner_item left_bottom'></view>
+      </view>
+       <view class='bg_dark main_item full-height' style='width:{{margin.right + "px"}}'></view> 
+    </view>
+    <view class='bg_dark out_item flex-column flex-end'>
+      <view class='flex-around text_white text_bg'>
+        <view catchtap='outputImg' data-type='1' class='op_view'>
+          <text>重新上传</text>
+        </view>
+        <view catchtap='getImg' class='op_view'>
+          <text>完成</text>
+        </view>
+      </view>
+    </view>
+    <!--  -->
+    <view class='absolute full-width full-height bg_black'></view>
+  </view>
+</scroll-view>

@@ -1,0 +1,6 @@
+<!--Component/IndicatorDots/ComIndicatorDots.wxml-->
+<view class='dots_list_view'>
+  <block wx:for='{{source}}' wx:key='{{index}}'>
+  <view class="dots_item_view {{index==currentIndex?selDotType:'dots_item_unselect'}}"></view>
+  </block>
+</view>
